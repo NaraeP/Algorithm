@@ -3,33 +3,28 @@ package com.test.baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-
 
 public class Q2588 {
 
-	public static void main(String[] args) throws IOException {
-		//Baekjoon Q2588
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		// Baekjoon Q2588
+		// import 단축키: Ctrl + Shift + O
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		String a = st.nextToken();
-		String b = st.nextToken();
+		int param1 = Integer.parseInt(br.readLine());
+		int param2 = Integer.parseInt(br.readLine());
 		
-		for (int i=a.length()-1; i>0; i--) {
-			
-			int c = Integer.parseInt(a.substring(i, i+1));
-			
-			for (int j=b.length()-1; j>0; j--) {
-				
-				int d = Integer.parseInt(b.substring(i, i+1));
-				
-				System.out.println(c * d);
-			}
+		int quotient = param2;
+		int remainder = 0;
+		
+		for (int i=0; i<3; i++)
+		{
+			remainder = quotient % 10;
+			quotient = quotient/ 10;
+			System.out.println(param1 * remainder);
 		}
 		
-		System.out.println(Integer.parseInt(a) * Integer.parseInt(b));
-		
+		System.out.println(param1 * param2);
 	}
 }
