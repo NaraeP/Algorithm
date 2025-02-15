@@ -18,7 +18,7 @@ public class Q2480 {
 		int param3 = Integer.parseInt(st.nextToken());
 		int result = 0;
 		
-		/*// 2025-02-14 Ver.2  ** 이거 틀림 **
+		// 2025-02-14 Ver.2
 		if (param1 == param2 && param2 == param3) {
 			result = 10000 + param1 * 1000;
 		} else if (param1 == param2 || param1 == param3) {
@@ -26,9 +26,11 @@ public class Q2480 {
 		} else if (param2 == param3) {
 			result = 1000 + param2 * 100;
 		} else {
-			result = Math.max(param1, Math.max(param2, param3));
+			result = Math.max(param1, Math.max(param2, param3)) * 100;
 		}
-		*/
+		
+		System.out.println(result);
+
 		
 		/*// 2025-02-13 Ver.1
 		if (param1 == param2 && param1 == param3 && param2 == param3) {
