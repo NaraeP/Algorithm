@@ -7,17 +7,30 @@ import java.io.InputStreamReader;
 public class Q5622 {
 
 	public static void main(String[] args) throws IOException {
-		/*
-		 *  1 2 3 4 5 6 7 8 9 0
-		 *  >> +1초씩 추가
-		 *  배열의 idx에 초를 넣고 입력문자를 if절로 구분해서 계산해보자
-		 */
 		
-		// Try 2
-//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		// Try 2: ASCII CODE 사용(A: 65 ~ Z: 90)
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input = br.readLine();
+		int c;
+		int sum = 0;
 		
+		for (int i=0; i<input.length(); i++) {
+			c = input.charAt(i);
+			
+			if (c < 68) sum += 3;
+			else if (c < 71) sum += 4;
+			else if (c < 74) sum += 5;
+			else if (c < 77) sum += 6;
+			else if (c < 80) sum += 7;
+			else if (c < 84) sum += 8;
+			else if (c < 87) sum += 9;
+			else sum += 10;
+			
+		}
 		
-		// Try 1
+		System.out.println(sum);
+		
+		// Try 1: switch로 알파벳 조건 걸기
 		/*
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input = br.readLine();
